@@ -1,0 +1,44 @@
+<div id="navigation-header">
+    <div id="buttons-container" class="clearfix">
+        <button [class.active]="navigation_state === navigation_state_values.individual" (click)="navigation_state = navigation_state_values.individual"><span class="total-unread-messages">3</span>Individual</button>
+        <button [class.active]="navigation_state === navigation_state_values.group" (click)="navigation_state = navigation_state_values.group"><span class="total-unread-messages">55</span>Groups</button>
+    </div>
+    <div id="individual-messages" class="conversations-list" [hidden]="navigation_state != navigation_state_values.individual">
+        <div class="conversation clearfix" *ngFor="let i_conv of individual_conversations;let i = index" (click)="selectIConv(i);">
+            <div class="image-profile-container pull-left" [style.background-image]="'url(' + i_conv.otherUser.photoUrl + ')'" ></div>
+            <div class="conversation-detail pull-left">
+                <p class="conversation-name">{{i_conv.otherUser.username}}</p>
+                <p class="last-message">{{i_conv.lastMessage.text}}</p>
+            </div>
+            <div class="conversation-detail pull-right">
+                <p class="last-message-date">{{ i_conv.lastMessage.timestamp | date }}</p>
+                <span class="outer-circle">
+                    <span class="unread-number">{{i_conv.unreadMessages}}</span>
+                </span>
+            </div>
+        </div>
+        <button id="new-conversation" class="action-btn" (click)="newIConv()">&nbsp;</button>
+    </div>
+
+    <div id="group-messages" class="conversations-list" [hidden]="navigation_state != navigation_state_values.group">
+        <div class="conversation clearfix" *ngFor="let conv of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
+            <div class="image-profile-container pull-left" [style.background-image]="'url(' + 'https://d2hlpx9fy0iy4k.cloudfront.net/users/39/image_1' + ')'" ></div>
+            <div class="conversation-detail pull-left">
+                <p class="conversation-name">Vader</p>
+                <p class="last-message">Star Wars - The last Jedi!</p>
+            </div>
+            <div class="conversation-detail pull-right">
+                <p class="last-message-date">12:35</p>
+                <span class="outer-circle">
+                    <span class="unread-number">7</span>
+                </span>
+            </div>
+        </div>
+        <button id="new-group" class="action-btn">&nbsp;</button>
+    </div>
+
+</div>
+<div id="conversation-container">
+    <list-messages *ngIf="message_list.length > 0" [messagesData]="message_list" [scrollNeeded]="scroll_needed"></list-messages>
+    <new-message *ngIf="message_list.length > 0" (newMessagetEvent)="newMessageEventHandler($event)"></new-message>
+</div>

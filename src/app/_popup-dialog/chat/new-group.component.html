@@ -1,0 +1,49 @@
+<div class="dialog" >
+    <div class="container">
+        <form name="form" (ngSubmit)="addGroupConversation()"  enctype="multipart/form-data">
+            <div class="header">
+                <h4>New group conversation</h4>
+                <div class="photo-name">
+                 <div id="add-photo"></div>
+                <div class="image-upload">
+
+                    <div style="height:0px;overflow:hidden">   
+                        <input type="file" #file (change)="onChange(file.files)" id="fileInput" name="fileInput"  />       
+                    </div> 
+                    <img  src="../assets/images/add-group-photo-placeholder.png"  (click)="chooseFile();"  style="display: inline-block; margin-left: 30px;" > 
+                </div>
+
+                <input class="form-control group-name" placeholder="Group name" name="name" [(ngModel)]="group_data.name" #name="ngModel" required >
+                </div>
+
+                <hr>
+                <input class="form-control" id="search-new-user" placeholder=" Search user">
+            </div>
+
+             <!--Use jQuery: a div to which I should append the checked input containing the selected user data. Initially, this should be empty  -->
+             
+            <!-- <p class="title"> Selected users</p>           
+            <div class="selected-users"> 
+                <div class="user-details">
+                    <img src="#" >
+                    <p id="username">Username</p>   
+                   <md-checkbox ng-checked="1" ng-click="toggle()" role="checkbox"  [checked]="true" ></md-checkbox>                
+                </div> 
+                <hr>             
+            </div> -->
+             
+             <p class="title"> Users </p>
+             <div class="selected-users" *ngFor="let user of data; let i=index"> 
+                <div class="user-details">
+                    <img src="{{user.profile_image}}" style=" height:32px; width:32px; border-radius:50%;" >
+                    <p id="username">{{user.username}} </p>                     
+                    <input  id="users-for-group" type="checkbox" name="selected_users{{user.firebase_uid}}" [(ngModel)]="selected_users[user.firebase_uid]"  #name="ngModel"  />
+                </div>   
+                 <hr>          
+            </div>                       
+            <button class="btn add-user-group" >
+                START GROUP CONVERSATION
+            </button>    
+        </form>
+    </div>
+</div>

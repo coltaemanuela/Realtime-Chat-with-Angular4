@@ -1,0 +1,40 @@
+<!-- <p>CLOSE X </p> -->
+<div class="dialog"> 
+    <div class="container">
+    <form>
+        <div class="header">
+            <h4>Add users to group </h4>
+            <div class="search-container" style="width: 93%; margin: 0 auto;">
+                <input class="form-control" name= "q" placeholder="&nbsp; &nbsp; Search User" id="search-user" >         
+            </div> 
+        </div>
+        <p class="title">Selected Users</p>
+        <div class="selected-users" *ngFor="let user of user_data">
+            <div class="user-details">
+                <img id="ceva" style="width:32px; height:32px; border-radius:50%;" src="{{user.value.photoUrl}}" >
+                <p id="username">{{user.value.username}}</p>                        
+                <md-checkbox ng-checked="" ng-click="toggle()">
+       
+              </md-checkbox>   <hr> 
+            </div>
+            
+        </div>
+     
+        <p class="title">Users</p>
+        <div class="selected-users" *ngFor="let member of total_noblocking_users"> 
+            <div class="user-details">
+                <img src="#" >
+                <p id="username"> {{ member.username}} </p>
+                 <md-checkbox ng-checked="" ng-click="toggle()">
+               <span ng-if=""></span>
+              </md-checkbox>                
+            </div>
+             
+        </div>
+        <hr>        
+        <button class="btn add-user-group" >
+            ADD USERS TO GROUP
+        </button>               
+    </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="dialog new-conv" >
+    <div class="container">
+        <form>
+            <div class="header">
+                <h4>New Conversation</h4>
+                <input class="form-control" placeholder=" Search user" style="width: 93%; margin: 0 auto;">
+            </div>
+            <p class="title">Users</p>
+            <div class="selected-users" *ngFor="let user of data"> 
+                <div class="user-details">
+                    <img src="{{user.profile_image}}" style=" height:32px; width:32px; border-radius:50%;  " >
+                    <p id="username"> {{user.username}} </p>   
+                    <a  href="chat/i/{{user.firebase_uid}}" class="btn" id="new-individual" ></a>              
+                </div>             
+            </div>
+            <hr>              
+        </form>
+    </div>
+</div>

@@ -1,0 +1,283 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open Sans';
+}
+
+.clear-padding {
+    padding: 0;
+}
+
+button:focus, textarea:focus{
+    outline: none;
+}
+
+.mat-dialog-container{
+    padding: 0px !important;
+    border-radius: 5px !important;
+}
+
+.mat-dialog-content {
+    margin: auto !important;
+}
+
+.bg-transparent .mat-dialog-container{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+thumbsplit-app{
+    background: #fafafa;
+    display: block;
+    min-height: 100%;
+    position: relative;
+}
+
+header-component{
+    display: block;
+    position: relative;
+    z-index: 999;
+}
+
+aside-menu-compoment{
+    background: #fff;
+    height: calc(100% - 64px);
+    left: 0;
+    position: absolute;
+    padding: 20px 36px;
+    transition: 300ms linear all;
+    width: 264px;
+    z-index: 998;
+}
+
+aside-menu-compoment.custom-hide{
+    left: -300px;
+}
+
+ng-component, about-voty, add-video, video-effects, record-video{
+    display:block;
+    /*height: calc(100vh - 64px);*/
+    padding-bottom: 70px;
+}
+
+footer-component{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* background-color: blue; */
+    width: 100%;
+    height: 50px;
+    
+}
+
+.user-menu-custom-dropdown{
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: initial !important;
+}
+
+.user-menu-custom-dropdown .mat-menu-content {
+    border-radius: 10px;
+    padding: 15px 0;
+}
+
+.user-menu-custom-dropdown:after, .user-menu-custom-dropdown:before {
+	bottom: 100%;
+	left: 80%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.user-menu-custom-dropdown:before {
+	border-bottom-color: #fff;
+	border-width: 10px;
+	margin-left: -10px;
+}
+
+.video-more-options-dropdown{
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: initial !important;
+}
+
+.video-more-options-dropdown .mat-menu-content {
+    border-radius: 10px;
+    padding: 15px 0;
+}
+
+.video-more-options-dropdown .image-container{
+    background-size: contain;
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.video-more-options-dropdown:after, .video-more-options-dropdown:before {
+	bottom: 100%;
+	left: 80%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.video-more-options-dropdown:before {
+    border-bottom-color: rgba(180, 180, 180, 0.1);
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.video-more-options-dropdown:after {
+	border-bottom-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.video-more-options-dropdown .text-container{
+    color: #5a575c;
+}
+
+.video-more-options-dropdown button:hover .text-container{
+    color: #f10173;
+}
+
+.video-more-options-dropdown .add-to-favourites{
+    background: url('/assets/images/ic-add-to-favourites.png') no-repeat;
+}
+
+.video-more-options-dropdown button:hover .add-to-favourites{
+    background: url('/assets/images/ic-add-to-favourites-focussed.png') no-repeat;
+}
+
+.video-more-options-dropdown .report-video{
+    background: url('/assets/images/ic-report-video.png') no-repeat;
+}
+
+.video-more-options-dropdown button:hover .report-video{
+    background: url('/assets/images/ic-report-video-focussed.png') no-repeat;
+}
+
+.video-more-options-dropdown .send-message{
+    background: url('/assets/images/ic-send-as-messages.png') no-repeat;
+}
+
+.video-more-options-dropdown button:hover .send-message{
+    background: url('/assets/images/ic-send-as-messages-focussed.png') no-repeat;
+}
+
+.video-more-options-dropdown .edit-video{
+    background: url('/assets/images/ic-edit-video.png') no-repeat;
+    height: 24px;
+    margin-left: -4px;
+    width: 24px;
+}
+
+.video-more-options-dropdown button:hover .edit-video{
+    background: url('/assets/images/ic-edit-video-hover.png') no-repeat;
+}
+
+.video-more-options-dropdown .delete-video{
+    background: url('/assets/images/ic-delete-video.png') no-repeat;
+    height: 24px;
+    margin-left: -4px;
+    width: 24px;
+}
+
+.video-more-options-dropdown button:hover .delete-video{
+    background: url('/assets/images/ic-delete-video-hover.png') no-repeat;
+}
+
+.categories-dropdown{
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0px 7px 18px 0 rgba(71, 60, 90, 0.31);
+    margin-top: 40px;
+    width: 280px;
+}
+
+.categories-dropdown #category-list{
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.categories-dropdown .mat-menu-content{
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+.categories-dropdown hr{
+    margin: 15px 0 ;
+}
+
+.categories-dropdown hr:last-of-type{
+    margin-bottom: 0;
+}
+
+.categories-dropdown .search-container{
+    position: relative;
+    padding: 5px 15px;
+}
+
+.categories-dropdown .search-container input{
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: solid 1px #e4e6e8;
+    height: 32px;
+    padding-left: 50px;
+    width: 100%;
+}
+
+.categories-dropdown .search-container .btn{
+    background: transparent;
+    border: 0;
+    position: absolute;
+    top: 5px;
+}
+
+.categories-dropdown .item{
+    padding: 10px 15px;
+}
+
+.categories-dropdown .item.search-btn{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.categories-dropdown .category-title label{
+    color: #514e54;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+}
+.categories-dropdown .category-title label:hover{
+    color: #f10173;
+}
+
+.categories-dropdown .clear-all p{
+    color: #f10173;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    padding: 15px 0 ;
+    text-align: center;
+    text-transform: uppercase;
+}
